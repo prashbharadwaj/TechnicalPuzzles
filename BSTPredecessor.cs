@@ -49,11 +49,11 @@ class Solution
 
         predecessorNode = FindPredecessor(root, root);
         PrintStatus(root, predecessorNode);
-
         predecessorNode = FindPredecessor(root, node6);
         PrintStatus(node6, predecessorNode);
     }
 
+    
     static void PrintStatus(TreeNode node, TreeNode predecessorNode)
     {
         if (node == null)
@@ -71,6 +71,44 @@ class Solution
             Console.WriteLine("Predecessor node for {0} : {1}", node.data, predecessorNode.data);
         }
     }
+
+     static int FindPredecessorBst(Node node, in expectedData)
+     {
+            int min = int.MinValue;
+            while (node != null)
+            {
+                if (node.data < expectedData)
+                {
+                    min = node.data;
+                    node = node.right;
+                }
+                else
+                {
+                    node = node.left;
+                }
+            }
+
+            return min;
+        }
+
+        static int FindSuccesssorBst(Node node, int expectedData)
+        {
+            int max = int.MaxValue;
+            while (node != null)
+            {
+                if (node.data > expectedData)
+                {
+                    max = node.data;
+                    node = node.left;
+                }
+                else 
+                {
+                    node = node.right;
+                }
+            }
+
+            return max;
+        }
 
     static TreeNode FindPredecessor(TreeNode root, TreeNode node)
     {
