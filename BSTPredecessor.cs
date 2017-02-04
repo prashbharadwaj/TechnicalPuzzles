@@ -53,11 +53,11 @@ class Solution
 
         predecessorNode = FindPredecessor(root, root);
         PrintStatus(root, predecessorNode);
-
         predecessorNode = FindPredecessor(root, node6);
         PrintStatus(node6, predecessorNode);
     }
 
+    
     static void PrintStatus(TreeNode node, TreeNode predecessorNode)
     {
         if (node == null)
@@ -76,47 +76,43 @@ class Solution
         }
     }
 
-    // Find predecessor using BST characteristics
-    static TreeNode FindPredecessorBst(TreeNode root, TreeNode node)
-    {
-        TreeNode tree = root;
-        TreeNode predecessor = null;
-        while (tree != null)
-        {
-            if (node.data > tree.data)
+     static int FindPredecessorBst(Node node, int expectedData)
+     {
+            int min = int.MinValue;
+            while (node != null)
             {
-                predecessor = node;
-                tree = tree.right;
+                if (node.data < expectedData)
+                {
+                    min = node.data;
+                    node = node.right;
+                }
+                else
+                {
+                    node = node.left;
+                }
             }
-            else
-            {
-                tree = tree.left;
-            }
+
+            return min;
         }
 
-        return predecessor;
-    }
-
-    // Find successor using BST properties
-    static TreeNode FindSucccessorBst(TreeNode root, TreeNode node)
-    {
-        TreeNode tree = root;
-        TreeNode successor = null;
-        while (tree != null)
+        static int FindSuccesssorBst(Node node, int expectedData)
         {
-            if (node.data <= tree.data)
+            int max = int.MaxValue;
+            while (node != null)
             {
-                successor = node;
-                tree = tree.left;
+                if (node.data > expectedData)
+                {
+                    max = node.data;
+                    node = node.left;
+                }
+                else 
+                {
+                    node = node.right;
+                }
             }
-            else
-            {
-                tree = tree.right;
-            }
-        }
 
-        return successor;
-    }
+            return max;
+        }
 
     static TreeNode FindPredecessor(TreeNode root, TreeNode node)
     {
