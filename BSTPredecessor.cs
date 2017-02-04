@@ -35,6 +35,10 @@ class Solution
 
         node21.right = node26;
 
+        //BST scenarios
+
+
+        // Non-BST
         TreeNode predecessorNode = FindPredecessor(root, node29);
         PrintStatus(node29, predecessorNode);
 
@@ -70,6 +74,48 @@ class Solution
         {
             Console.WriteLine("Predecessor node for {0} : {1}", node.data, predecessorNode.data);
         }
+    }
+
+    // Find predecessor using BST characteristics
+    static TreeNode FindPredecessorBst(TreeNode root, TreeNode node)
+    {
+        TreeNode tree = root;
+        TreeNode predecessor = null;
+        while (tree != null)
+        {
+            if (node.data > tree.data)
+            {
+                predecessor = node;
+                tree = tree.right;
+            }
+            else
+            {
+                tree = tree.left;
+            }
+        }
+
+        return predecessor;
+    }
+
+    // Find successor using BST properties
+    static TreeNode FindSucccessorBst(TreeNode root, TreeNode node)
+    {
+        TreeNode tree = root;
+        TreeNode successor = null;
+        while (tree != null)
+        {
+            if (node.data <= tree.data)
+            {
+                successor = node;
+                tree = tree.left;
+            }
+            else
+            {
+                tree = tree.right;
+            }
+        }
+
+        return successor;
     }
 
     static TreeNode FindPredecessor(TreeNode root, TreeNode node)
