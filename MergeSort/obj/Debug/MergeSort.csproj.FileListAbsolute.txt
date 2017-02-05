@@ -1,0 +1,6 @@
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\MergeSort\bin\Debug\MergeSort.exe.config
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\MergeSort\bin\Debug\MergeSort.exe
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\MergeSort\bin\Debug\MergeSort.pdb
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\MergeSort\obj\Debug\MergeSort.exe
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\MergeSort\obj\Debug\MergeSort.pdb
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\MergeSort\obj\Debug\MergeSort.csprojResolveAssemblyReference.cache

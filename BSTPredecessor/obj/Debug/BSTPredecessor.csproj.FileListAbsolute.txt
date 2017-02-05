@@ -1,0 +1,6 @@
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\BSTPredecessor\bin\Debug\BSTPredecessor.exe.config
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\BSTPredecessor\obj\Debug\BSTPredecessor.csprojResolveAssemblyReference.cache
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\BSTPredecessor\bin\Debug\BSTPredecessor.exe
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\BSTPredecessor\bin\Debug\BSTPredecessor.pdb
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\BSTPredecessor\obj\Debug\BSTPredecessor.exe
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\BSTPredecessor\obj\Debug\BSTPredecessor.pdb
