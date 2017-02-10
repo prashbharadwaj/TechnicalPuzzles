@@ -1,0 +1,6 @@
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\ArrayInversion\bin\Debug\ArrayInversion.exe.config
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\ArrayInversion\bin\Debug\ArrayInversion.exe
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\ArrayInversion\bin\Debug\ArrayInversion.pdb
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\ArrayInversion\obj\Debug\ArrayInversion.csprojResolveAssemblyReference.cache
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\ArrayInversion\obj\Debug\ArrayInversion.exe
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\ArrayInversion\obj\Debug\ArrayInversion.pdb
