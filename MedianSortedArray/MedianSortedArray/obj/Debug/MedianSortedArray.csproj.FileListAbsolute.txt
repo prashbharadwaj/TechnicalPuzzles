@@ -1,0 +1,6 @@
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\MedianSortedArray\MedianSortedArray\bin\Debug\MedianSortedArray.exe.config
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\MedianSortedArray\MedianSortedArray\bin\Debug\MedianSortedArray.exe
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\MedianSortedArray\MedianSortedArray\bin\Debug\MedianSortedArray.pdb
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\MedianSortedArray\MedianSortedArray\obj\Debug\MedianSortedArray.csprojResolveAssemblyReference.cache
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\MedianSortedArray\MedianSortedArray\obj\Debug\MedianSortedArray.exe
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\MedianSortedArray\MedianSortedArray\obj\Debug\MedianSortedArray.pdb
