@@ -1,0 +1,6 @@
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\OptimalResourceMapping\bin\Debug\OptimalResourceMapping.exe.config
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\OptimalResourceMapping\bin\Debug\OptimalResourceMapping.exe
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\OptimalResourceMapping\bin\Debug\OptimalResourceMapping.pdb
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\OptimalResourceMapping\obj\Debug\OptimalResourceMapping.csprojResolveAssemblyReference.cache
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\OptimalResourceMapping\obj\Debug\OptimalResourceMapping.exe
+C:\TechnicalProblems\gitrepo\TechnicalPuzzles\OptimalResourceMapping\obj\Debug\OptimalResourceMapping.pdb
