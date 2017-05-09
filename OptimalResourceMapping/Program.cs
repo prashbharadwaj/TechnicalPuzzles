@@ -37,20 +37,81 @@ namespace OptimalResourceMapping
 
             var serverDbMap = GetServerDbMap(new List<ServerNode> { nodeA, nodeB, nodeC, nodeD, nodeE });
             PrintServerDbMap(serverDbMap);
+
+            //Second test
+            nodes = new List<ServerNode>();
+            nodeA = new ServerNode("ServerA");
+            db1 = new DatabaseObject("db1");
+            db2 = new DatabaseObject("db2");
+            db3 = new DatabaseObject("db3");
+            nodeA.AssignDatabase(db1);
+            nodeA.AssignDatabase(db2);            
+
+            nodeB = new ServerNode("ServerB");
+            db4 = new DatabaseObject("db4");
+            nodeB.AssignDatabase(db2);
+            nodeB.AssignDatabase(db3);
+            nodeB.AssignDatabase(db4);
+
+            nodeC = new ServerNode("ServerC");
+            db5 = new DatabaseObject("db5");
+            nodeC.AssignDatabase(db4);
+            nodeC.AssignDatabase(db5);
+
+            nodeD = new ServerNode("ServerD");
+            nodeD.AssignDatabase(db5);
+
+            nodeE = new ServerNode("ServerE");
+            DatabaseObject db6 = new DatabaseObject("db6");
+            nodeE.AssignDatabase(db6);
+            nodeE.AssignDatabase(db2);
+            nodeE.AssignDatabase(db1);
+            
+
+
             Console.ReadLine();
         }
 
         static Dictionary<ServerNode, DatabaseObject> GetServerDbMap(List<ServerNode> nodes)
         {
             Dictionary<ServerNode, DatabaseObject> result = new Dictionary<ServerNode, DatabaseObject>();
+
+            // Make a first pass and map single node mapping first
+            for(int i = 0; i < nodes.Count; i++)
+            {
+                var n = nodes[i];
+                if (n.DbList.Count == 1)
+                {
+                    MapNodeToDb(n, n.DbList[0], result);
+                    nodes[i] = null;
+                }
+            }
+
             foreach (var node in nodes)
             {
-                var db = FindMostSuitableDb(node.DbList);
-                result.Add(node, db);
-                RemoveDbFromNodeList(db.Nodes, db);
+                if (node != null)
+                {
+                    var db = FindMostSuitableDb(node.DbList);
+                    MapNodeToDb(node, db, result);
+                }
             }
 
             return result;
+        }
+        
+        static void MapNodeToDb(ServerNode node, DatabaseObject db, Dictionary<ServerNode, DatabaseObject> map)
+        {
+            map.Add(node, db);
+            RemoveDbFromNodeList(db.Nodes, db);
+            RemoveNodeFromDbList(node.DbList, node);
+        }
+
+        static void RemoveNodeFromDbList(List<DatabaseObject> dbList, ServerNode node)
+        {
+            foreach (var db in dbList)
+            {
+                db.Nodes.Remove(node);
+            }
         }
 
         static void RemoveDbFromNodeList(HashSet<ServerNode> serverNodes, DatabaseObject db)
