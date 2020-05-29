@@ -17,6 +17,8 @@ namespace ArrayInversion
             Console.ReadLine();
         }
 
+        // Refer to code from techie delight - http://www.techiedelight.com/inversion-count-array/
+        // That code is better since there is no unnecessary copy of arrays
         public static int CountInversions(int[] inArr)
         {
             if (inArr.Length == 0 || inArr.Length == 1)

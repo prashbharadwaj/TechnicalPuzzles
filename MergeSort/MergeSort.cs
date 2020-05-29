@@ -32,8 +32,20 @@ namespace DivideAndConquer
             sw.Stop();
 
             Console.WriteLine("Sorting big array took {0} milliseconds", sw.Elapsed.Milliseconds);
-            PrintFirstAndLastPartArray(bigArray, 100, 999900); 
+            PrintFirstAndLastPartArray(bigArray, 100, 999900);
 
+            // Iterative merge sort
+            arrayToSort = new int[] { 1000, 99, 120, 1, 2 };
+            PrintArray(arrayToSort);
+            int[] temp = new int[arrayToSort.Length];
+            for (int i = 0; i < arrayToSort.Length; i++)
+            {
+                temp[i] = arrayToSort[i];
+            }
+
+            SortIterative(arrayToSort, temp, 0, arrayToSort.Length - 1);
+            Console.WriteLine("Completed iterative merge sort");
+            PrintArray(arrayToSort);
             Console.ReadLine();
         }
 
@@ -110,6 +122,54 @@ namespace DivideAndConquer
             while (j < array2.Length)
             {
                 mergedArray[x++] = array2[j++];
+            }
+        }
+
+        internal static void MergeIterative(int[] array, int[] temp, int from, int mid, int to)
+        {
+            int x = from;
+            int i = from;
+            int j = mid + 1;
+
+            while ( i <= mid && j <= to)
+            {
+                if (array[i] < array[j])
+                {
+                    temp[x++] = array[i++];
+                }
+                else
+                {
+                    temp[x++] = array[j++];
+                }
+            }
+
+            // Remaining elements in the lower half
+            while (i <= mid)
+            {
+                temp[x++] = array[i++];
+            }
+
+            // No need to copy the other as it is already in place
+
+            // Copy temp to array
+            for (i = from; i <= to; i++)
+            {
+                array[i] = temp[i];
+            }
+        }
+
+        internal static void SortIterative(int[] array, int[] temp, int low, int high)
+        {
+            for (int m = 1; m < high - low; m *= 2)
+            {
+                for (int i = low; i < high; i += 2 * m)
+                {
+                    int from = i;
+                    int mid = i + m - 1;
+                    int to = Math.Min(i + 2 * m - 1, high);
+
+                    MergeIterative(array, temp, from, mid, to);
+                }
             }
         }
     }
